@@ -1,0 +1,190 @@
+
+/* khai báo biến define để sao gọi tên dùng cho nhanh */
+:root {
+    --text-color: #333;
+    --hover-color: #ccc;
+    --primary-color: #FE6132;
+    --header-width: 120px;
+    --header-nav-width: 37px;
+    --header-search-width: calc(var(--header-width) - var(--header-nav-width));
+}
+
+/* seleter * apply tất cả css lên tất cả phần tử html */
+* {
+    /* có tính chất kế thừa thẻ cha, cứ ghi vào đây sau giải thích */
+    box-sizing: inherit;
+}
+
+html {
+    /* font-size 62.5% thì sai 1 rem = 10px */
+    font-size: 62.5%;
+    /* đặt chiều cao chữ cho all page, chữ nào chiều cao khác set sau */
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    /* box-sizing: để không bị độn chiều cao box khi padding */
+    box-sizing: border-box;
+}
+
+/*--- responsive ---*/
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* set item nằm ngang bằng flex và có xuống dòng khi responsive */
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.grid__col-2 {
+    width: 16.6667%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.grid__col-10 {
+    width: 83.3333%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.is-link:hover {
+    cursor : pointer;
+    opacity: 0.8;
+}
+
+
+.is-button:hover {
+    cursor : pointer;
+    background-color: var(--primary-color);
+    color: #fff;
+    opacity: 0.8;
+}
+
+.no-link {
+    user-select: none;
+}
+
+.font-15 {
+    font-size: 1.5rem !important
+}
+
+.font-bold {
+    font-weight: 500 !important
+}
+/* ======================================= */
+/* modal css */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__body {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* btn css */
+.btn {
+    border: none;
+    background-color: #fff;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    min-width: 100px;
+    color: var(--text-color);
+    border-radius: 2px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor : pointer;
+
+}
+
+.btn.btn--primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* select input */
+.select-input {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 1px);
+    background-color: #fff;
+    display: none;
+}
+
+.select-input::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    top: -10px;
+    left: 0;
+}
+
+.select-input__list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.select-input__item:last-child {
+    padding-top: 6px;
+}
+
+.select-input__item-link {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    display: block;
+    padding: 8px 26px;
+}
+
+.select-input__item-link:hover {
+    color: var(--primary-color);
+}
+
+
+
+
+
+/* animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* animation for box notify */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
