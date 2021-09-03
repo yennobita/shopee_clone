@@ -4,6 +4,8 @@
     --text-color: #333;
     --hover-color: #ccc;
     --primary-color: #FE6132;
+    --star-color: #FFCE3D;
+
     --header-width: 120px;
     --header-nav-width: 37px;
     --header-search-width: calc(var(--header-width) - var(--header-nav-width));
@@ -36,21 +38,28 @@ html {
 .grid__row {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -12px;
-    margin-right: -12px;
-}
-
-.grid__col-2 {
-    width: 16.6667%;
-    padding-left: 12px;
-    padding-right: 12px;
+    margin-left: -5px;
+    margin-right: -5px;
 }
 
 .grid__col-10 {
     width: 83.3333%;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
+
+.grid__col-2-12 {
+    width: 16.6667%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.grid__col-2-10 {
+    width: 20%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 
 .is-link:hover {
     cursor : pointer;
