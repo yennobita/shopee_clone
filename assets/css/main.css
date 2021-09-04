@@ -520,15 +520,13 @@
     border: 2px solid var(--primary-color);
 }
 
-.header__cart:hover .header__cart-popup  {
+.header__cart:hover .header__cart-popup {
     display: block;
 }
 /*----- no cart -----*/
 .header__cart-popup {
     width: 400px;
     /* 50% kích thước chiều dọc màn hình */
-    height: 50vh;
-    overflow-y: auto;
     position: absolute;
     background-color: #fff;
     top: calc(100% + 9px);
@@ -547,13 +545,13 @@
 
 .header__cart-popup::before {
     content: "";
-    border-width: 10px 14px;
+    border-width: 8px 14px;
     border-color: transparent transparent #fff transparent;
     border-style: solid;
     position: absolute;
     cursor: pointer;
-    top: -19px;
-    right: 8px;
+    top: -16px;
+    right: 10px;
 }
 
 .header__cart-popup--nocart .header__cart-popup--nocart-img {
@@ -590,6 +588,8 @@
 .header__cart-popup-list {
     list-style: none;
     padding: 0;
+    height: 50vh;
+    overflow-y: auto;
 }
 
 .header__cart-popup-item {
@@ -630,7 +630,7 @@
     font-size: 1.4rem;
     line-height: 1.6rem;
     font-weight: 500;
-    height: 3.2rem;
+    max-height: 3.2rem;
     overflow: hidden;
     display: block;
     display: -webkit-box;
@@ -638,6 +638,7 @@
     -webkit-line-clamp: 2;
     flex: 1;
     text-align: left;
+    padding-bottom: 10px;
 }
 
 .header__cart-popup-item-info-sp-price {
@@ -966,6 +967,7 @@
 
 .product__item {
     background-color: #fff;
+    border-radius: 2px;
     margin-top: 10px;
     position: relative;
     display: block;
@@ -985,7 +987,9 @@
     /* size vừa đủ khung */
     background-size: contain;
     /* cho vị trí giữa để nếu có phóng to nó phóng giữa */
-    background-position: center;
+    background-position: top center;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
 }
 
 .product__item_info {
@@ -1038,6 +1042,7 @@
 
 .product__item-action-like {
     font-size: 1.1rem;
+    color: var(--primary-color);
 }
 
 i.product__item-action-liked-icon {
@@ -1086,8 +1091,6 @@ i.product__item-action-liked-icon {
     font-size: 1.2rem;
     padding: 0 6px;
     line-height: 16px;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
 }
 
 .product__item_favorite span {
@@ -1113,6 +1116,7 @@ i.product__item-action-liked-icon {
     height: 36px;
     background-color: rgba(254,215,56,0.9);
     text-align: center;
+    border-top-right-radius: 2px;
 }
 
 .product__item_saleoff::before {
