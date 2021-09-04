@@ -87,6 +87,7 @@
     /* đặt lại tâm của animation scale lên top right */
     transform-origin: calc(100% - 20px) top;
     display: none;
+    z-index: 2;
 }
 
 .header__nav-user-popup::before {
@@ -196,7 +197,6 @@
 .header__nav-item--hover:hover .header__notify {
     display: block;
 }
-
 /* --------------header notify------------- */
 .header__notify {
     width: 400px;
@@ -252,7 +252,7 @@
 .header__notify-content-item {
     display: flex;
     text-decoration: none;
-    padding-bottom: 20px;
+    padding-bottom: 6px;
     background-color: rgba(238, 75, 43, 0.09);
 }
 
@@ -276,12 +276,20 @@
 
 .header__notify-content-text h3 {
     font-weight: 400;
-    padding-bottom: 4px;
+    padding-bottom: 6px;
+    padding-top: 6px;
 }
 
 .header__notify-content-text h4 {
     font-weight: 300;
     opacity: 0.8;
+    line-height: 1.8rem;
+    height: 3.6rem;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
 .header__notify-content-item img {
@@ -365,6 +373,7 @@
     top: calc(100% + 2px);
     display: none;
     overflow: hidden;
+    z-index: 1;
 }
 
 .header__search-history-header {
@@ -434,6 +443,7 @@
     min-width: 124px;
     display: none;
     animation: fadeIn ease-in 0.3s;
+    z-index: 1;
 }
 
 .header__search-option-list::before {
@@ -489,6 +499,7 @@
     cursor: pointer;
     margin: 0 50px;
     position: relative;
+    z-index: 1;
 }
 
 .header__cart-icon {
@@ -515,6 +526,9 @@
 /*----- no cart -----*/
 .header__cart-popup {
     width: 400px;
+    /* 50% kích thước chiều dọc màn hình */
+    height: 50vh;
+    overflow-y: auto;
     position: absolute;
     background-color: #fff;
     top: calc(100% + 9px);
@@ -599,22 +613,31 @@
 .header__cart-popup-item-info {
     flex: 1;
     padding-left: 10px;
-
+    padding-right: 6px;
 }
 
 .header__cart-popup-item-info-sp {
     display: flex;
     /* background-color: #ccc; */
     justify-content: space-between;
-    align-items: center;
-    padding-bottom: 12px;
+    /* align-items: center; */
+    /* padding-bottom: 12px; */
 
 }
 
 .header__cart-popup-item-info-sp-name {
     margin: 0;
     font-size: 1.4rem;
+    line-height: 1.6rem;
     font-weight: 500;
+    height: 3.2rem;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    flex: 1;
+    text-align: left;
 }
 
 .header__cart-popup-item-info-sp-price {
@@ -937,6 +960,10 @@
 }
 
 /*----- product-item -----*/
+.product__item-wapper {
+    margin-bottom: 10px;
+}
+
 .product__item {
     background-color: #fff;
     margin-top: 10px;
