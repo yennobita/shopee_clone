@@ -48,7 +48,7 @@ html {
     padding-right: 5px;
 }
 
-.grid__col-2-12 {
+.grid__col-2 {
     width: 16.6667%;
     padding-left: 5px;
     padding-right: 5px;
@@ -59,7 +59,6 @@ html {
     padding-left: 5px;
     padding-right: 5px;
 }
-
 
 .is-link:hover {
     cursor : pointer;
