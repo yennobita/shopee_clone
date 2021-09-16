@@ -211,7 +211,7 @@
     /* đặt lại tâm của animation scale lên top right */
     transform-origin: calc(100% - 20px) top;
     display: none;
-    z-index: 1;
+    z-index: 2;
 }
 
 /* cái mũi tên trên box notify dùng border */
@@ -589,7 +589,7 @@
 .header__cart-popup-list {
     list-style: none;
     padding: 0;
-    height: 50vh;
+    max-height: 30vh;
     overflow-y: auto;
 }
 
@@ -683,6 +683,60 @@
     float: right;
     margin: 10px;
 }
+
+/*--- header-sortbar for ipad mobile ---*/
+.header-sortbar {
+    width: 100%;
+    height: var(--header-sortbar);
+    position: fixed;
+    top: var(--header-width);
+    background-color: #fff;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    display: none;
+}
+
+.header-sortbar-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.header-sortbar-item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.header-sortbar-item--active .header-sortbar-item-link {
+    color: var(--primary-color);
+}
+
+.header-sortbar-item::before {
+    content: "";
+    height: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    border-left: 1px solid #ccc;
+}
+
+.header-sortbar-item:first-child::before {
+    display: none;
+}
+
+.header-sortbar-item-link {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    display: block;
+    height: var(--header-sortbar);
+    line-height: var(--header-sortbar);
+}
+
 
 
 /* ========= modal register va login ===========*/
@@ -1019,6 +1073,7 @@
 
 .product__item-price {
     display: flex;
+    flex-wrap: wrap;
     /* để 2 cái giá tiền nó căng thẳng base-line là dưới chân */
     align-items: baseline;
 }
@@ -1212,7 +1267,7 @@ i.product__item-action-liked-icon {
 }
 
 .footer__fist-download-qr-img {
-    width: 100px;
+    width: 50%;
     object-fit: contain;
 }
 

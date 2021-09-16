@@ -9,6 +9,7 @@
     --header-width: 120px;
     --header-nav-width: 37px;
     --header-search-width: calc(var(--header-width) - var(--header-nav-width));
+    --header-sortbar: 42px
 }
 
 /* seleter * apply tất cả css lên tất cả phần tử html */
@@ -25,13 +26,6 @@ html {
     font-family: 'Roboto', sans-serif;
     /* box-sizing: để không bị độn chiều cao box khi padding */
     box-sizing: border-box;
-}
-
-/*--- responsive ---*/
-.grid {
-    width: 1200px;
-    max-width: 100%;
-    margin: 0 auto;
 }
 
 /* set item nằm ngang bằng flex và có xuống dòng khi responsive */
