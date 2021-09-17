@@ -1,3 +1,6 @@
+#main {
+    overflow: hidden;
+}
 /* =========== header ============= */
 #header {
     height: var(--header-width);
@@ -318,6 +321,7 @@
     height: var(--header-search-width);
     align-items: center;
     display: flex;
+    z-index: 1;
 }
 
 .header__logo {
@@ -343,6 +347,28 @@
     display: flex;
     align-items: center;
     font-size: 1.4rem;
+}
+
+/* search icon on mobile */
+.header__search-mobile {
+    padding: 6px 10px;
+    display: none;
+    animation: scaleIn linear 0.3s ;
+}
+
+.header__search-mobile-icon {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.header__search-mobile-checkbox-overlay {
+    background-color: transparent;
+    position: fixed;
+    top: calc(var(--header-width) + var(--header-sortbar));
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
 }
 
 .header__search-box-input {
@@ -501,6 +527,8 @@
     margin: 0 50px;
     position: relative;
     z-index: 1;
+    /* bỏ đổi màu nền khi bấm trên điện thoại */
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header__cart-icon {
@@ -693,7 +721,7 @@
     background-color: #fff;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    /* z-index: 1; */
     display: none;
 }
 
@@ -701,6 +729,7 @@
     list-style: none;
     display: flex;
     margin: 0;
+    padding-left: 0;
 }
 
 .header-sortbar-item {
@@ -735,6 +764,73 @@
     display: block;
     height: var(--header-sortbar);
     line-height: var(--header-sortbar);
+}
+/*----- category mobile -----*/
+.category__mobile {
+    background-color: #f5f5f5;
+    /* position: fixed;
+    top: calc(var(--header-width) + var(--header-sortbar));
+    left: 0;
+    right: 0; */
+    padding-top: 6px;
+    z-index: 1;
+    display: none;
+}
+
+.category__mobile-list {
+    display: flex;
+    padding-left: 0;
+    max-width: 100%;
+    overflow-x: auto;
+    list-style: none;
+}
+
+/* ẩn thanh kéo ngang */
+.category__mobile-list::-webkit-scrollbar {
+    display: none;
+}
+
+.category__mobile-item {
+    /* không méo item khi hết chỗ */
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.category__mobile-item:nth-of-type(3n + 1) .category__mobile-item-link {
+    background-color: #87AFD8;
+}
+
+.category__mobile-item:nth-of-type(3n + 2) .category__mobile-item-link {
+    background-color: #76C9BD;
+}
+
+.category__mobile-item:nth-of-type(3n) .category__mobile-item-link {
+    background-color: #88CF81;
+}
+
+.category__mobile-item-link {
+    --line-height: 2.2rem;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: var(--line-height);
+    height: calc(var(--line-height) * 2 +2px);
+    color: #fff;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    width: 100px;
+    border-radius: 3px;
+    text-align: center;
+    padding: 2px;
+    /* bỏ đổi màu chữ khi bấm trên điện thoại */
+    user-select: none;
+    -webkit-user-select: none;
+    /* bỏ đổi màu nền khi bấm trên điện thoại */
+    -webkit-tap-highlight-color: transparent;
+
 }
 
 

@@ -9,7 +9,7 @@
     --header-width: 120px;
     --header-nav-width: 37px;
     --header-search-width: calc(var(--header-width) - var(--header-nav-width));
-    --header-sortbar: 42px
+    --header-sortbar: 42px;
 }
 
 /* seleter * apply tất cả css lên tất cả phần tử html */
@@ -26,32 +26,8 @@ html {
     font-family: 'Roboto', sans-serif;
     /* box-sizing: để không bị độn chiều cao box khi padding */
     box-sizing: border-box;
-}
-
-/* set item nằm ngang bằng flex và có xuống dòng khi responsive */
-.grid__row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -5px;
-    margin-right: -5px;
-}
-
-.grid__col-10 {
-    width: 83.3333%;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-.grid__col-2 {
-    width: 16.6667%;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-.grid__col-2-10 {
-    width: 20%;
-    padding-left: 5px;
-    padding-right: 5px;
+    /* chuyển cảnh cuộn */
+    scroll-behavior: smooth;
 }
 
 .is-link:hover {
