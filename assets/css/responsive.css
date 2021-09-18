@@ -1,4 +1,4 @@
-/* Mobile: width <= 1023px */
+/* Mobile & tablet: width <= 1023px */
 @media only screen and (max-width: 63.9375em) {
     :root {
         --header-width: 60px;
@@ -60,6 +60,10 @@
     .category__mobile {
         display: block;
     }
+
+    .mobile-menu {
+        display: block;
+    }
  
 
 }
@@ -75,7 +79,9 @@
         margin-left: 20px;
     }
 
-
+    .mobile-menu {
+        margin-right: 40px;
+    }
 }
 
 /* Mobile: width <= 739px */
@@ -137,6 +143,10 @@
 
     .category__mobile {
         padding-left: 8px;
+    }
+
+    .header__cart {
+        margin-right: 20px;
     }
     
 }
